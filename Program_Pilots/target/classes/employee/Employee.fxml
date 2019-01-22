@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane style="-fx-background-color: #2D3447;" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="employee.EmployeeController">
+    <children>
+        <Pane prefHeight="54.0" prefWidth="700.0" style="-fx-background-color: White;">
+            <children>
+                <ImageView fitHeight="54.0" fitWidth="69.0" layoutX="644.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@AALogo.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </Pane>
+        <Pane prefHeight="400.0" prefWidth="700.0">
+            <children>
+                <Pane prefHeight="400.0" prefWidth="53.0" style="-fx-background-color: #cc323c;" />
+                <Text fx:id="employeeWelcome" layoutX="289.0" layoutY="35.0" strokeType="INSIDE" strokeWidth="0.0" text="Welcome" textAlignment="CENTER">
+                    <font>
+                        <Font name="Times New Roman" size="24.0" />
+                    </font>
+                </Text>
+                <TabPane layoutX="53.0" layoutY="53.0" prefHeight="349.0" prefWidth="652.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                        <Tab text="Schedule">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <TableView fx:id="empSchedule" layoutX="341.0" layoutY="5.0" prefHeight="310.0" prefWidth="303.0">
+                                            <columns>
+                                                <TableColumn fx:id="employeeName" prefWidth="75.0" text="Name" />
+                                                <TableColumn fx:id="empScheduleDate" prefWidth="75.0" text="Date" />
+                                                <TableColumn fx:id="empShiftNum" prefWidth="75.0" text="Shift #" />
+                                                <TableColumn fx:id="empShiftType" prefWidth="75.0" text="Shift Type" />
+                                            </columns>
+                                        </TableView>
+                                        <DatePicker fx:id="EmployeeStartDate" layoutX="62.0" layoutY="46.0" onAction="#createSchedule" />
+                                        <DatePicker fx:id="EmployeeEndDate" layoutX="62.0" layoutY="160.0" onAction="#createSchedule" />
+                                        <Text fill="WHITE" layoutX="10.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="From:">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </Text>
+                                        <Text fill="WHITE" layoutX="20.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To:">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </Text>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab text="Requests">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <TableView fx:id="requestsTable" layoutX="52.0" layoutY="19.0" prefHeight="278.0" prefWidth="549.0">
+                                            <columns>
+                                                <TableColumn fx:id="empRequestFrom" prefWidth="95.0" text="From" />
+                                                <TableColumn fx:id="empRequestTo" prefWidth="100.0" text="To" />
+                                                <TableColumn fx:id="empRequests" prefWidth="261.0" text="Reason" />
+                                                <TableColumn fx:id="empApproved" prefWidth="92.0" text="Approved" />
+                                            </columns>
+                                        </TableView>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab text="Request Off">
+                            <content>
+                                <AnchorPane fx:id="EmpScheduleTab" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <DatePicker fx:id="EmpRequestFromDP" layoutX="254.0" layoutY="23.0" prefHeight="26.0" prefWidth="230.0" />
+                                        <DatePicker fx:id="EmpRequestToDP" layoutX="254.0" layoutY="89.0" prefHeight="26.0" prefWidth="230.0" />
+                                        <Text fill="WHITE" layoutX="217.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="From:">
+                                            <font>
+                                                <Font name="Times New Roman Bold" size="12.0" />
+                                            </font>
+                                        </Text>
+                                        <Text fill="WHITE" layoutX="233.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To:">
+                                            <font>
+                                                <Font name="Times New Roman Bold" size="12.0" />
+                                            </font>
+                                        </Text>
+                                        <Text fill="WHITE" layoutX="64.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please Input Reason for Time Off">
+                                            <font>
+                                                <Font name="Times New Roman Bold Italic" size="12.0" />
+                                            </font>
+                                        </Text>
+                                        <Button fx:id="EmpRequestButton" layoutX="300.0" layoutY="241.0" mnemonicParsing="false" onAction="#makeRequest" text="Submit" />
+                                        <TextField fx:id="EmpRequestReason" layoutX="254.0" layoutY="165.0" prefHeight="27.0" prefWidth="231.0" />
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab text="Pay">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <BarChart fx:id="EmpPayChart" layoutX="38.0" layoutY="39.0" prefHeight="278.0" prefWidth="576.0" style="-fx-alternative-column-fill-visible: Red;" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="38.0" AnchorPane.topAnchor="39.0">
+                                            <xAxis>
+                                                <CategoryAxis side="BOTTOM" />
+                                            </xAxis>
+                                            <yAxis>
+                                                <NumberAxis side="LEFT" tickLabelFill="WHITE" />
+                                            </yAxis>
+                                        </BarChart>
+                                        <Text fill="#f2efef" layoutX="268.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pay Chart">
+                                            <font>
+                                                <Font size="24.0" />
+                                            </font>
+                                        </Text>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab text="Hours">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <BarChart fx:id="EmpHourChart" layoutX="24.0" layoutY="47.0" prefHeight="270.0" prefWidth="576.0" style="-fx-alternative-column-fill-visible: Red;" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="52.0" AnchorPane.topAnchor="47.0">
+                                            <xAxis>
+                                                <CategoryAxis side="BOTTOM" />
+                                            </xAxis>
+                                            <yAxis>
+                                                <NumberAxis side="LEFT" tickLabelFill="WHITE" />
+                                            </yAxis>
+                                        </BarChart>
+                                        <Text fill="#f2efef" layoutX="262.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hours Chart">
+                                            <font>
+                                                <Font size="24.0" />
+                                            </font>
+                                        </Text>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                  <Tab fx:id="logoutTab" onSelectionChanged="#logout" text="Logout">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    </content>
+                  </Tab>
+                    </tabs>
+                </TabPane>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="xt" />
+                <Text layoutX="401.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="Maven: com.h2database:h2:1.4.196">
+    <archive path="/home/chris/.m2/repository/com/h2database/h2/1.4.196/h2-1.4.196.jar" />
+  </library>
+  <library name="charm-glisten-4.4.1">
+    <archive path="/home/chris/IdeaProjects/ProgramPilots/lib/charm-glisten-4.4.1.jar" />
+  </library>
+  <library name="jfxrt">
+    <archive path="/home/chris/.local/share/JetBrains/Toolbox/apps/IDEA-U/ch-0/181.4203.550/jre64/lib/ext/jfxrt.jar" />
+  </library>
+</eclipse-userlibraries>
+

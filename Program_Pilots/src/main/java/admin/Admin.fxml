@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="223.0" prefWidth="424.0" style="-fx-background-color: #2D3447;" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.AdminController">
+   <children>
+      <Pane prefHeight="54.0" prefWidth="810.0" style="-fx-background-color: White;">
+         <children>
+            <ImageView fitHeight="54.0" fitWidth="69.0" layoutX="644.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../manager/AALogo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane prefHeight="400.0" prefWidth="700.0">
+         <children>
+            <Pane prefHeight="400.0" prefWidth="53.0" style="-fx-background-color: #cc323c;" />
+            <Text fx:id="welcome" layoutX="350.0" layoutY="35.0" strokeType="INSIDE" strokeWidth="0.0" text="Welcome" textAlignment="CENTER">
+               <font>
+                  <Font name="Times New Roman" size="24.0" />
+               </font>
+            </Text>
+            <TabPane layoutX="53.0" layoutY="53.0" prefHeight="349.0" prefWidth="762.5" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                  <Tab text="Employee Records">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="Records" layoutX="12.0" layoutY="21.0" prefHeight="278.0" prefWidth="634.0">
+                                 <columns>
+                                 <TableColumn fx:id="RecordsEmpID" prefWidth="75.0" text="Employee id" />
+                                 <TableColumn fx:id="RecordsName" minWidth="-Infinity" prefWidth="200.0" text="Name">
+                                       <columns>
+                                          <TableColumn fx:id="firstName" minWidth="-Infinity" prefWidth="150.0" text="First" />
+                                          <TableColumn fx:id="lastName" minWidth="-Infinity" prefWidth="150.0" text="Last" />
+                                       </columns>
+                                    </TableColumn>
+  								 <TableColumn fx:id="RecordsHours" prefWidth="152.0" text="Hours per Week" />
+  								 <TableColumn fx:id="RecordPay" prefWidth="104.0" text="Pay per Week" />
+                                    </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="New Employee">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="EmpFName" layoutX="177.0" layoutY="67.0" />
+                              <TextField fx:id="PasswordEmp" layoutX="177.0" layoutY="185.0" />
+                              <TextField fx:id="EmpPay" layoutX="496.0" layoutY="95.0" />
+                              <Text fill="WHITE" layoutX="12.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Employee's First Name!" wrappingWidth="159.40004456043243" />
+                              <Text fill="WHITE" layoutX="12.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Employee's Last Name!" wrappingWidth="159.40004456043243" />
+                              <Text fill="WHITE" layoutX="12.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Employee's Password!" wrappingWidth="159.40004456043243" />
+                              <TextField fx:id="EmpLName" layoutX="178.0" layoutY="125.0" />
+                              <Text fill="WHITE" layoutX="139.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create New Employee Login!" wrappingWidth="321.33668518066406">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Text>
+                              <Button fx:id="CreateEmp" layoutX="299.0" layoutY="268.0" mnemonicParsing="false" onAction="#NewEmployee" text="Submit" />
+                              <Text fill="WHITE" layoutX="375.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Employee's Pay!" wrappingWidth="139.40004456043243" />
+                              <Text fill="WHITE" layoutX="317.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Employee's Overtime Pay" wrappingWidth="169.00008118152618" />
+                              <TextField fx:id="EmpOverPay" layoutX="496.0" layoutY="156.0" />
+                              <TextField fx:id="EmpOverPayTime" layoutX="496.0" layoutY="210.0" />
+                              <Text fill="WHITE" layoutX="317.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Employee's Overtime Hours" wrappingWidth="169.00008118152618" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="New Manager">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="ManFName" layoutX="177.0" layoutY="67.0" />
+                              <TextField fx:id="ManPass" layoutX="177.0" layoutY="185.0" />
+                              <TextField fx:id="ManPay" layoutX="493.0" layoutY="67.0" />
+                              <Text fill="WHITE" layoutX="12.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Manager's First Name!" wrappingWidth="159.40004456043243" />
+                              <Text fill="WHITE" layoutX="12.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Manager's Last Name!" wrappingWidth="159.40004456043243" />
+                              <Text fill="WHITE" layoutX="12.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Manager's Password!" wrappingWidth="159.40004456043243" />
+                              <TextField fx:id="ManLName" layoutX="178.0" layoutY="125.0" />
+                              <Text fill="WHITE" layoutX="139.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create New Manager Login!" wrappingWidth="321.33668518066406">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Text>
+                              <Button fx:id="CreateMan" layoutX="299.0" layoutY="268.0" mnemonicParsing="false" onAction="#NewManager" text="Submit" />
+                              <Text fill="WHITE" layoutX="353.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Manager's Pay!" wrappingWidth="121.40004456043243" />
+                              <Text fill="WHITE" layoutX="12.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Manager's Username!" wrappingWidth="149.00008118152618" />
+                              <TextField fx:id="ManUserName" layoutX="175.0" layoutY="226.0" />
+                              <TextField fx:id="ManOvertimePay" layoutX="493.0" layoutY="117.0" />
+                              <Text fill="WHITE" layoutX="344.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Manager's Overtime Pay!" wrappingWidth="139.40004456043243" />
+                              <TextField fx:id="ManOvertimeHours" layoutX="493.0" layoutY="185.0" />
+                              <Text fill="WHITE" layoutX="344.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Manager's Overtime Hours!" wrappingWidth="139.40004456043243" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab fx:id="logoutTab" onSelectionChanged="#logout" text="Logout">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="xt" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
